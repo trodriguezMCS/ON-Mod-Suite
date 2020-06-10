@@ -1232,41 +1232,41 @@ function GetGradeLevel(str)
         var yearnum = d.getFullYear();
         var year = yearnum.toString();
         year = year.substring(2, 4);
-        var offset = str.substring(str.length-2, str.length) - year - ((d.getMonth() < 5) ? 0:1);
+        var offset = str.substring(str.length-2, str.length) - year - ((d.getMonth() < 6) ? 0:1); // School year ends June
 
         switch (offset)
-        {
+        { // Modification made to reflect MCS 8 grade levels
             case 0:
-                return " (12th)";
-                break;
-            case 1:
-                return " (11th)";
-                break;
-            case 2:
-                return " (10th)";
-                break;
-            case 3:
-                return " (9th)";
-                break;
-            case 4:
                 return " (8th)";
                 break;
-            case 5:
+            case 1:
                 return " (7th)";
                 break;
-            case 6:
+            case 2:
                 return " (6th)";
                 break;
-            case 7:
+            case 3:
                 return " (5th)";
                 break;
-            case 8:
+            case 4:
                 return " (4th)";
                 break;
-            case 9:
+            case 5:
                 return " (3rd)";
                 break;
-            case 10:
+            case 6:
+                return " (2nd)";
+                break;
+            case 7:
+                return " (1st)";
+                break;
+            case 8:
+                return " (K)";
+                break;
+            case 9:
+                return " (TK)";
+                break;
+        /*    case 10: // These original items not needed for MCS
                 return " (2nd)";
                 break;
             case 11:
@@ -1280,7 +1280,7 @@ function GetGradeLevel(str)
                 break;
             case 14:
                 return " (K3)";
-                break;
+                break;  */
             default:
                 return null;
         }
